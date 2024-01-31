@@ -24,11 +24,11 @@ class DataTransformation:
 
     def get_data_transformer_object(self):
         '''
-        This function si responsible for data trnasformation
+        This function si responsible for data transformation
         
         '''
         try:
-            numerical_columns = ["writing_score", "reading_score"]
+            numerical_columns = ["writing_score", "reading_score"]              #data
             categorical_columns = [
                 "gender",
                 "race_ethnicity",
@@ -37,7 +37,7 @@ class DataTransformation:
                 "test_preparation_course",
             ]
 
-            num_pipeline= Pipeline(
+            num_pipeline= Pipeline(   
                 steps=[
                 ("imputer",SimpleImputer(strategy="median")),
                 ("scaler",StandardScaler())
@@ -85,7 +85,7 @@ class DataTransformation:
 
             preprocessing_obj=self.get_data_transformer_object()
 
-            target_column_name="math_score"
+            target_column_name="math_score"                                 #data
             numerical_columns = ["writing_score", "reading_score"]
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
